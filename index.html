@@ -4,39 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>JS For Beginners</title>
+    <title id="title">JS For Beginners</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header>
-      <h1>JS For Beginners</h1>
-    </header>
+    <header id="header">
 
     <section class="container">
+      <h1 id="head">Item Lister<span style="display: none;">123</span></h1>
+
       <form id="my-form">
-        <h1>Add User</h1>
-        <div class="msg"></div>
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" id="name">
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="text" id="email">
-        </div>
+        <h1 class="items">Add Items</h1>
+        <div class="msg">
+        
+            <input type="text" id="name">
+          
+          <select class="form-control" mr-2>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+
+          </select>
+  
+        
         <input class="btn" type="submit" value="Submit">
+      
+      </div>
       </form>
+   
+      </section>
+  </header>
+ 
+    <ul id="group-items">
+      
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+      <li class="item">Item 4</li>
+    </ul>
+    <div id="output"></div>
+    <br>
 
-      <ul id="users"></ul>
-
-      <ul class="items">
-        <li class="item">Item 1</li>
-        <li class="item">Item 2</li>
-        <li class="item">Item 3</li>
-      </ul>
-    </section>
-    
-
+  <button id="button" class="btn1 btn-dark btn-block">Click Here</button> 
+<br>
+  <div id='box1' style="width:400px;height: 200px;background: #f4f4f4;"><h3>HELLO</h3></div>
     <script src="main.js"></script>
   </body>
 </html>

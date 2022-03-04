@@ -1,283 +1,236 @@
-//alert("Hello World");
-//console.log("Hai how r u");
-//console.error('This is error');
-//console.warn('This is warning');
-//var,let,const
-//const age=30;
-//age=31;
-//console.log(age);
-//strings,numbers,boolean,null,undefined
+//EXAMINE the DOCUMENT OBJECT
 
-const name='john';
-const age=30;
-const isCool=true;
-const rating=4.5;
-const x=null;
-const y=undefined;
-let z;
-console.log(typeof name);
-console.log(typeof age);
-console.log(typeof isCool);
-console.log(typeof rating);
-console.log(typeof x);
-console.log(typeof y);
-console.log(typeof z);
-//concatenating
-console.log("my name is" + name + "my age is" + age)
-//Template String
-console.log('My name is ${name} and I am ${age}');
-const hello='my name is ${name} and I am ${age}';
-console.log(hello);
-const n='technology,computer,it,code';
-const s="hello world";
-console.log(s.length);
-console.log(s.toUpperCase());
-console.log(s.toLowerCase());
-console.log(s.substring(0,5))
-console.log(s.substring(0,5).toUpperCase());
-console.log(s.split(''));
-console.log(n.split(','));
-//Arrays-varibles that hold multiple values
-const numbers=new Array(1,2,3,4,5);
-console.log(numbers);
-const fruits=['apples','oranges','pears'];
-fruits[3]='mangos';
-fruits.push('bananas');
-fruits.unshift('jellies');
-fruits.pop();
-console.log(fruits);
-console.log(fruits[1]);
-console.log(Array.isArray('hello'));
-console.log(fruits.indexOf('oranges'));
+//console.dir(document);
+//console.log(document.domain);
+//console.log(document.URL);
+//console.log(document.title);
 
-const person={
-    firstname:'john',
-    lastname:'doe',
-    agge:30,
-    hobbies:['music','movies','sports'],
-    address:{street:'50 main st',city:'Boston',state:'MA' }
-}
-console.log(person);
-console.log(person.firstname,person.lastname);
-console.log(person.hobbies[1]);
-console.log(person.address.city);
+//.log(document.doctype);
+//console.log(document.head);
+//console.log(document.body);
+//console.log(document.all);
+//console.log(document.all[15]);
+//document.all[15].textContent="User Name";
+//console.log(document.forms);
+//console.log(document.links);
+//console.log(document.images);
+//console.log(document.forms[0]);
+//GETELEMENT By ID
+//console.log(document.getElementById("title"));
+// var headertitle = document.getElementById("head");
+// console.log(document.getElementById("title"));
+//headertitle.textContent="hello";
+//headertitle.innerText="GoodBye";
+//var head=document.getElementById("head");
+//console.log(head.innerText);
 
-const {firstname,lastname,address:{city}}=person;
-console.log(firstname);
-console.log(city);
+//headertitle.innerHTML="<h3>Hello</h3>";
+//headertitle.style.borderBottom="solid 3px #000";
 
-person.email='mohini548@gmail.com';
-console.log(person);
+//GETELEMENTS By Class name
+// var test=document.getElementsByClassName("list-group-items");
+// console.log(test);
+// console.log(test[2]);
+// test[1].textContent='hello';
+// test[0].style.fontweight="bold";
 
-const todos=[
-    {
-    id : 1,
-    text:'Take out trash',
-    isCompleted:true
-    },{
-        id : 2,
-        text:'Meeting with boss',
-        isCompleted:true
-    },
-    {
-        id : 3,
-        text:'Dentist appt',
-        isCompleted:false
-    }
-            ]   
- console.log(todos[1].text);
+// //GIVES error
+// test.style.backgroundcolor='#f4f4f4';
 
- const todoJSON=JSON.stringify(todos);
- console.log(todoJSON);
+// for(var i=0;i<test.length;i++)
+// {
+//  test[i].style.backgroundColor='#f4f4f4';
+// }
 
- //for
- for(let i=0;i<=10;i++)
- {
-     console.log('For loop Number:'+i);
- }
- //while loop
- let i=0;
- while(i<10)
- {
-     console.log(i);
-     i++;
- }
- for(let i=0;i<todos.length;i++)
- {
-     console.log(todos[i].text);
- }
- for(let todo of todos)
- {
-     console.log(todo.id);
- }
- // forEach,map,filter
-// todos.forEach(function(todo){
-  //   console.log(todo.text);
- //});
- const todoText=todos.map(function(todo){
-     return todo.text;
-});
-console.log(todoText);
-const todoCompleted=todos.filter(function(todo){
-    return todo.isCompleted===true;
-}).map(function(todo){
-    return todo.text;
-})
-console.log(todoCompleted);
+//GETElements By TAG names
+//  var li=document.getElementsByTagName("li");
+//  console.log(li);
+//  console.log(li[2]);
+//  li[1].textContent="hello";
+//  li[0].style.fontWeight="bold";
+//  li[0].style.backgroundColor="#f4f4f4";
 
-const a=20;
-const b=10;
-if(a==10)
-{
-    console.log('A is 10');
-}else if(a>10)
-{
-    console.log('A is greater than 10');
-}else
-{
-    console.log('A is less than 10');
-}
-if(a>5 || b>10)
-    {
-        console.log('a is more than 5 or b is more than 10');
-    }
-    if(a>5 && b>=10)
-    {
-        console.log('a is more than 5 and b is more than or equal to 10');
-    }
+// //GIVES error
+// //li.style.backgroundColor='#f4f4f4';
 
-const c=11;
-const color=c>10 ? 'red':'blue';
-console.log(color);
- const col='green';
-switch(col){
-    case 'red':
-        console.log('color is red');
-        break;
-    case 'blue':
-        console.log('color is blue');
-        break;
-    default:
-        console.log('color is Not red or blue');
-        break;
-            }
-function addNum(num1=1,num2=1)
-{
-    return num1+num2;
-}
-console.log(addNum(5,9));
-//addNum();
-//onst addnum=(n1,n2)=>n1+n2;
-//console.log(addnum(5,5));
-//const addnum=(n1,n2)=>{return n1+n2;}
-//console.log(addnum(5,5));
-const addnum=n1=>n1+7;
-console.log(addnum(5));
-//Construction function
-function Person(firstname,lastname,dob)
-{
-    this.firstname=firstname;
-    this.lastname=lastname;
-    //this.dob=dob;
-    this.dob=new Date(dob);
-    this.getBirthYear=function(){
-        return this.dob.getFullYear();
+//  for(var i=0;i<li.length;i++)
+//  {
+//      li[i].style.backgroundColor='pink';
+
+// }
+
+// //Query Selector
+
+// var header=document.querySelector('header');
+// header.style.backgroundColor='solid 4px #ccc';
+
+
+// var input=document.querySelector('input');
+// input.value='Hello World';
+
+// var submit=document.querySelector('input[type="submit"]');
+// submit.value="SEND";
+
+// var item=document.querySelector('.list-item-group');
+// console.log(item);
+// item.style.color='red';
+
+// var lastitem=document.querySelector('.list-item-group:last-child');
+// lastitem.style.color="blue";
+
+// var seconditem=document.querySelector('.list-item-group:nthchild(2)');
+
+// seconditem.style.color="coral";
+
+//QUERY SELECTOR ALL
+// var titles=document.querySelectorAll('title');
+// console.log(titles);
+
+// titles[0].textContent="Hello";
+
+// var odd=document.querySelectorAll('li:nth-child(odd)');
+// var even=document.querySelectorAll('li:nth-child(even)');
+
+// for(var i=0;i<odd.length;i++)
+// {
+//     odd[i].style.backgroundColor="#f4f4f4";
+//     even[i].style.backgroundColor='#ccc';
+
+// }
+
+//TRAVERSING the DOM
+//var itemlist=document.querySelector('.items');
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.style.backgroundColor='#f4f4f4';
+// console.log(itemlist.parentNode.parentNode.parentNode);
+//parent
+// console.log(itemlist.parentNode);
+// itemlist.parentNode.style.backgroundColor='#f4f4f4';
+// console.log(itemlist.parentNode.parentNode.parentNode);
+
+//ChildNodes
+//console.log(itemlist.childNodes);
+//var itemlists = document.querySelector('#group-items');
+// console.log(itemlists.children);
+// console.log(itemlists.children[1]);
+// itemlists.children[1].style.backgroundColor='yellow';
+
+// //FirstChild
+// // console.log(itemlists.firstChild);
+// // //firstElement child
+// // console.log(itemlists.firstElementChild);
+// // itemlists.firstElementChild.textContent="hello";
+
+// console.log(itemlists.lastChild);
+// //LastElement child
+// console.log(itemlists.lastElementChild);
+// itemlists.lastElementChild.textContent="hello";
+
+//Nextsibling
+// console.log(itemlists.nextSibling);
+// //nextElement Sibling
+// console.log(itemlists.nextElementSibling);
+
+//Previous Sibling
+// console.log(itemlists.previousSibling);
+// //PreviousElementSibling
+// itemlists.previousElementSibling.style.color='green';
+
+//Create a Div
+// var newdiv=document.createElement('div');
+// var newh2=document.createElement('h2');
+
+// //Add class
+// newdiv.className='hello';
+
+
+// //Add id
+// newdiv.id="hello1";
+
+// //Add Attr
+// newdiv.setAttribute('title','Hello Div');
+
+// //Create text Node
+// var newdivtext=document.createTextNode('Hello World');
+
+// newdiv.appendChild(newdivtext);
+
+// var container = document.querySelector('header .container');
+// var h1=document.querySelector('header h1');
+
+// console.log(newdivtext);
+// console.log(newdiv);
+
+// newdiv.style.fontSize='10px';
+
+// container.insertBefore(newdiv,h1);
+
+//var button=document.getElementById('button').addEventListener('click',clickbutton);
+
+//Events
+// function clickbutton(e){
+    // // console.log('Button clicked');
+    // document.getElementById('head').textContent="Changed";
+    // document.querySelector('header').style.backgroundColor='green';
+    //console.log(e);
+    // console.log(e.target);
+
+    // console.log(e.target.id);
+    // console.log(e.target.className);
+    // console.log(e.target.classList);
+    // var output=document.getElementById('output');
+
+    // output.innerHTML='<h3>'+e.target.id+'</h3>';
+    // console.log(e.type);
     
-    }
-    this.getFullName=function(){
-        return this.firstname;
-        
+    // console.log(e.clientX);
+    // console.log(e.clientY);
+    // console.log(e.offsetX);
+    // console.log(e.offsetY);
 
-    }
-}
+    // console.log(e.altKey);
+    // console.log(e.ctrlKey);
+    // console.log(e.shiftKey);
+//}
+// var button=document.getElementById('button');
+//var box=document.getElementById('box1');
 
-//Initiate Object
-const persons1=new Person('john','doe','8-8-1972');
-console.log(persons1.firstname);
-const persons2=new Person('Mary','smith','4-5-1968');
-console.log(persons2.dob);
-console.log(persons2.dob.getFullYear());
+//button.addEventListener('click',runevent);
+//button.addEventListener('dblclick',runevent);
+//button.addEventListener('mousedown',runevent);
+//button.addEventListener('mouseup',runevent);
+//box.addEventListener('mouseenter',runevent);
+// box.addEventListener('mouseleave',runevent);
 
-console.log(persons1.getBirthYear());
-console.log(persons1.getFullName());
-//class
-class Person1{ 
-    constructor (firstname,lastname,dob)
-{
-    this.firstname=firstname;
-    this.lastname=lastname;
-    this.dob=dob;
-}
-getBirthYear()
-{
-    return this.dob.getFullYear();
-}
-getFullName()
-{
-    return $(this.firstname) + $(this.lastname) ;
-}
-}
-console.log(window);
-//alert(1);
-//Single element
-//console.log(document.getElementById('my-form'));
-const form=document.getElementById('my-form');
-console.log(form);
-console.log(document.querySelector('.container'));
-console.log(document.querySelector('h1'));
+//box.addEventListener('mouseover',runevent);
+// box.addEventListener('mouseout',runevent);
+ //box.addEventListener('mousemove',runevent);
+var iteminput=document.querySelector('input[type="text"]');
+ var form=document.querySelector("form");
+ var select=document.querySelector('select');
 
-//Multiple element
-//console.log(document.querySelectorAll('.items'));
-console.log(document.getElementsByClassName('items'));
-console.log(document.getElementsByTagName('li'));
-const items=document.querySelectorAll('item');
+// iteminput.addEventListener('keydown',runevent);
+// iteminput.addEventListener('keyup',runevent);
+// iteminput.addEventListener('keypress',runevent);
+// iteminput.addEventListener('focus',runevent);
+// iteminput.addEventListener('blur',runevent);
+// iteminput.addEventListener('cut',runevent);
+// iteminput.addEventListener('paste',runevent);
+// iteminput.addEventListener('input',runevent);
 
-//items.forEach((item)=>console.log(item));
-const ul=document.querySelector('.items');
-//ul.remove();
-//ul.lastElementChild.remove();
+// select.addEventListener('change',runevent);
+// select.addEventListener('input',runevent);
 
-ul.firstElementChild.textContent="hello";
-ul.children[1].innerText="Brad";
-ul.lastElementChild.innerHTML="<h1>Hello</h1>";
+select.addEventListener('submit',runevent);
 
-const btn=document.querySelector('.btn');
-//btn.style.background='red';
-//btn.style.color='black';
-//btn.addEventListener('click',(e)=>{
-  //  console.log('click');
-    btn.addEventListener('mouseover',(e)=>{
-       e.preventDefault();
-     //  console.log(e.target);
-     document.querySelector('#my-form').style.backgroundname='#ccc';
-     document.querySelector('body').classList.add('bg-dark');
-     document.querySelector('items').lastElementChild.innerHTML='<h1>Hello</h1>';
-});
-const myform=document.querySelector('#my-form');
-const nameInput=document.querySelector('#name');
-const emailInput=document.querySelector('#email');
-const msg=document.querySelector('.msg');
-const userList=document.querySelector('#users');
-
-myform.addEventListener('submit',onSubmit);
-function onSubmit(e)
-{
+function runevent(e)
+{   
     e.preventDefault();
-//    console.log(nameInput);
-  //  console.log(nameInput.value);
-  if(nameInput.value ==='' || emailInput.value ===''){
-     // alert('Please enter fields');
-      msg.classList.add('error');
-      msg.innerHTML="Please enter all fields";
-      setTimeout(()=>msg.remove(),3000);
-  } else{
-const li=document.createElement('li');
-li.appendChild(document.createTextNode('${nameInput.value}:${emailInput.value}'));
-      //console.log('Success');
- userList.appendChild(li);
- //clear fields
- nameInput='';
- emailInput='';
-    }
+    console.log('EVENT TYPE:' + e.type);
 
+    // console.log(e.target.value);
+    // document.getElementById('output').innerHTML='<h4>'+e.target.value+'</h4>';
+//box.innerHTML='<h3>Hai'+e.offsetX+'</h3>';
+// box.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",40)";
+//  document.body.style.backgroundColor="rgb(" + e.offsetX + "," + e.offsetY + ")";
 }
